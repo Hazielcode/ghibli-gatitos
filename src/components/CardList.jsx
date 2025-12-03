@@ -1,12 +1,12 @@
 import { Row, Col } from 'react-bootstrap';
 import Card from './Card';
 
-function CardList({ cats }) {
+function CardList({ Ghibli }) {
   return (
     <Row>
-      {cats.map((cat) => (
-        <Col key={cat.id} xs={12} md={6} lg={4}>
-          <Card cat={cat} />
+      {Ghibli.map((Ghibli) => (
+        <Col key={Ghibli.id} xs={12} md={6} lg={4}>
+          <Card Ghibli={Ghibli} />
         </Col>
       ))}
     </Row>

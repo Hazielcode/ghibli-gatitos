@@ -4,20 +4,20 @@ import { useStore } from '../store/store';
 import CardList from '../components/CardList';
 
 function Entities() {
-  const { cats, setCats } = useStore();
+  const { Ghibli, setGhibli } = useStore();
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchCats(page);
+    fetchGhibli(page);
   }, [page]);
 
-  const fetchCats = async (pageNum) => {
+  const fetchGhibli = async (pageNum) => {
     setLoading(true);
     try {
-      const response = await fetch(`https://api.thecatapi.com/v1/images/search?limit=12&page=${pageNum}`);
+      const response = await fetch(`https://ghibliapi.dev/people`);
       const data = await response.json();
-      setCats(data);
+      setGhibli(data);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -26,16 +26,16 @@ function Entities() {
 
   return (
     <Container className="my-5">
-      <h1 className="mb-4">All Cats 🐾</h1>
+      <h1 className="mb-4">🪼⋆｡𖦹°‧🎐 TODOS LOS GHIBLIS</h1>
       
       {loading ? (
         <div className="text-center my-5">
           <Spinner animation="border" variant="warning" />
-          <p className="mt-3">Loading cute cats...</p>
+          <p className="mt-3">cargando ghiblicitos bonitos....</p>
         </div>
       ) : (
         <>
-          <CardList cats={cats} />
+          <CardList Ghibli={Ghibli} />
           
           <div className="d-flex justify-content-center gap-3 my-4">
             <Button 
