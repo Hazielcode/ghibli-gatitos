@@ -10,7 +10,9 @@ function Card({ Ghibli }) {
       />
       <BootstrapCard.Body>
         <BootstrapCard.Text className="text-center">
-          <small className="text-muted">Ghibli ID: {Ghibli.id}</small>
+          <small className="text-muted">Ghibli titulo: {Ghibli.id}</small>
+          <small className="text-muted">Ghibli año: {Ghibli.id}</small>
+          <small className="text-muted">Ghibli descripcion corta: {Ghibli.id}</small>
         </BootstrapCard.Text>
       </BootstrapCard.Body>
     </BootstrapCard>
